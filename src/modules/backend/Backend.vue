@@ -1,11 +1,11 @@
 <template>
     <div>
-        <button class="m-3" v-if="!editionIndex"
+        <button class="m-3" v-if="!editionIndex && !addingItem"
                 @click="toggleAddingItem">Add new one
         </button>
         <list v-if="!editionIndex && !addingItem" :items="elementsList"></list>
         <edit v-if="editionIndex" :item="elementsList[editionIndex]"></edit>
-        <add-form v-if="addingItem"></add-form>
+        <add-form v-if="addingItem" @close="toggleAddingItem"></add-form>
     </div>
 </template>
 
@@ -20,6 +20,7 @@
             return {
                 editionIndex: null,
                 addingItem: false,
+                page: 1,
                 elementsList: [
                     {
                         id: 1,
@@ -39,12 +40,33 @@
             AddForm,
             Edit
         },
+        $watch: {
+            page() {
+                this.loadData();
+            }
+        },
         methods: {
+            created() {
+                this.loadData();
+            },
+            loadData() {
+                this.$http.post('main/get-most-popular-articles')
+                    .then(
+                        (res) => {
+                            console.log(res);
+                        },
+                        (err) => {
+                            console.log(err);
+                        });
+            },
+            changePage(page) {
+                this.page = page;
+            },
             openEdition(index) {
                 this.editionIndex = index;
             },
             toggleAddingItem() {
-                this.addingItem = true;
+                this.addingItem = !this.addingItem;
             }
         }
     }

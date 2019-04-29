@@ -1,12 +1,17 @@
 <template>
-<div></div>
+    <div>
+        <button @click="close">Close Adding</button>
+    </div>
 </template>
 
 <script>
     export default {
         name: '',
-        props: {
-
+        props: [],
+        methods: {
+            close() {
+                this.$emit('close');
+            }
         }
     }
 </script>
