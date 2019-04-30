@@ -1,4 +1,4 @@
-import * as environment from "../../../.env/environment";
+import environment from "../../../.env/environment";
 
 export class HttpHelper {
 
