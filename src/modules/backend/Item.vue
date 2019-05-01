@@ -1,15 +1,28 @@
 <template>
     <div>
-        <h1 class="title">{{item.title}}</h1>
-        <p class="body">{{item.body}}</p>
+        <b-card
+                :title="item.title"
+                img-src="https://picsum.photos/600/300/?image=25"
+                img-alt="Image"
+                img-top
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2"
+        >
+            <b-card-text>
+                {{item.body}}
+            </b-card-text>
+
+            <b-button variant="primary">Edit</b-button>
+        </b-card>
     </div>
 </template>
 
 <script>
     export default {
-        name: '',
-        props: ['item']
-    }
+        name: "",
+        props: ["item"]
+    };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
