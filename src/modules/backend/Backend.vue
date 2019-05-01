@@ -40,7 +40,7 @@
             AddForm,
             Edit
         },
-        $watch: {
+        watch: {
             page() {
                 this.loadData();
             }
