@@ -1,21 +1,28 @@
 <template>
     <div id="app">
-        <header-nav class="haader-nav"></header-nav>
-        <content-wrap class="content"></content-wrap>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import ContentWrap from "./modules/backend/Content-Wrap.vue";
-    import HeaderNav from "./+shared/components/header-nav.vue";
+    import Backend from "./modules/backend/backend.vue";
+    import Login from './+shared/components/login.vue';
+    import Regist from './+shared/components/regist.vue';
+    import Main from './modules/frontend/main.vue';
+    import Frontend from './modules/frontend/frontend.vue';
 
     export default {
         name: "app",
         components: {
-            ContentWrap,
-            HeaderNav
+            Backend,
+            Main,
+            Login,
+            Regist,
+            Frontend
         }
     };
+
+
 </script>
 
 <style>
@@ -28,14 +35,6 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-    }
-
-    .haader-nav {
-        padding-top: 10px;
-        display: block;
-        margin: 0 auto;
-        padding-left: 30px;
-        padding-right: 30px;
     }
 
     .content {

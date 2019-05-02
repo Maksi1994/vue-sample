@@ -1,12 +1,9 @@
 <template>
-    <div class="d-flex">
-        <item class="cart-item mr-2" v-for="item in items" :item="item" :key="item.id"></item>
-    </div>
-
+    <h1>THIS IS LIST!</h1>
 </template>
 
 <script>
-    import Item from "./Item.vue";
+    import Item from "./item.vue";
 
     export default {
         name: "",

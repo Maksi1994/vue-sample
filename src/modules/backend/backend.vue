@@ -1,20 +1,11 @@
 <template>
     <div>
-        <b-button variant="outline-primary d-block mb-2 ml-auto"
-                  v-if="!editionIndex && !addingItem"
-                  @click="toggleAddingItem">
-            Add new one
-        </b-button>
-        <list v-if="!editionIndex && !addingItem" :items="elementsList"></list>
-        <edit v-if="editionIndex" :item="elementsList[editionIndex]"></edit>
-        <add-form v-if="addingItem" @close="toggleAddingItem"></add-form>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import List from "./List.vue";
-    import AddForm from "./Add-Form.vue";
-    import Edit from "./Edit.vue";
+    import BackendHeader from "../../+shared/components/backend-header.vue";
 
     export default {
         data: function () {
@@ -37,9 +28,7 @@
             };
         },
         components: {
-            List,
-            AddForm,
-            Edit,
+            BackendHeader,
         },
         watch: {
             page() {
@@ -73,3 +62,13 @@
         }
     };
 </script>
+
+<style scoped>
+    .haader-nav {
+        padding-top: 10px;
+        display: block;
+        margin: 0 auto;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+</style>
