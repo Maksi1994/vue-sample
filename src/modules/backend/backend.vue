@@ -1,5 +1,6 @@
 <template>
     <div>
+        <backend-header></backend-header>
         <router-view></router-view>
     </div>
 </template>
@@ -8,6 +9,7 @@
     import BackendHeader from "../../+shared/components/backend-header.vue";
 
     export default {
+        name: 'backend',
         data: function () {
             return {
                 editionIndex: null,
@@ -64,11 +66,5 @@
 </script>
 
 <style scoped>
-    .haader-nav {
-        padding-top: 10px;
-        display: block;
-        margin: 0 auto;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+
 </style>

@@ -592,6 +592,11 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@fortawesome/fontawesome-free@^5.8.1":
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.8.1.tgz#cbafbfe8894c4e3e3c3a9da6774e249ac1f2da8b"
+  integrity sha512-GJtx6e55qLEOy2gPOsok2lohjpdWNGrYGtQx0FFT/++K4SYx+Z8LlPHdQBaFzKEwH5IbBB4fNgb//uyZjgYXoA==
+
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz#be7c7846128b88f6a9b1d1261a0ad06eb5c0fdf8"
@@ -6865,6 +6870,11 @@ vue-template-es2015-compiler@^1.9.0:
 vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
+
+vuelidate@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.7.4.tgz#5a0e54be09ac0192f1aa3387d74b92e0945bf8aa"
+  integrity sha512-QHZWYOL325Zo+2K7VBNEJTZ496Kd8Z31p85aQJFldKudUUGBmgw4zu4ghl4CyqPwjRCmqZ9lDdx4FSdMnu4fGg==
 
 watchpack@^1.5.0:
   version "1.6.0"

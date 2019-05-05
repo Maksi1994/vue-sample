@@ -1,0 +1,38 @@
+.haader-nav {
+    padding-top: 10px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.logo:hover {
+    text-decoration:none;
+}
+
+.logo .fas {
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none !important;
+    user-select: none;
+}
+
+.menu {
+    margin-left: 150px;
+}

@@ -28,6 +28,8 @@
 <style>
     @import '../node_modules/bootstrap/dist/css/bootstrap.css';
     @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
+    @import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+    @import './+shared/styles/style.css';
 
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;

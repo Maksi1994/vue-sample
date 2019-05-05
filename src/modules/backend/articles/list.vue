@@ -1,13 +1,39 @@
 <template>
-    <h1>THIS IS LIST!</h1>
+    <div>
+        <div class="table">
+
+        </div>
+
+        <div class="pagination">
+
+        </div>
+    </div>
 </template>
 
 <script>
     import Item from "./item.vue";
 
     export default {
-        name: "",
+        data() {
+          return {
+              page: 1,
+              articles: []
+          };
+        },
         props: ["items"],
+        methods: {
+            load () {
+
+            }
+        },
+        created() {
+            this.load();
+        },
+        watch: {
+          $route(from, to) {
+              this.page = to.page;
+          }
+        },
         components: {
             Item
         }

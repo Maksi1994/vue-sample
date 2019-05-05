@@ -5,11 +5,13 @@ import {HttpHelper} from "./+shared/classes/http-helper";
 import BootstrapVue from "bootstrap-vue";
 import {routes} from './router.js';
 import VueRouter from 'vue-router';
+import Vuelidate from 'vuelidate';
 
 Vue.config.productionTip = false;
 Vue.use(VueResource);
 Vue.use(BootstrapVue);
 Vue.use(VueRouter);
+Vue.use(Vuelidate);
 
 HttpHelper.setup(Vue);
 

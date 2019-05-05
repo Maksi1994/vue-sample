@@ -1,5 +1,11 @@
 <template>
-    
+    <div class="haader-nav">
+        <router-link :to="'/backend'">
+            <div class="logo" >
+                Backend
+            </div>
+        </router-link>
+    </div>
 </template>
 
 <script>
@@ -9,5 +15,4 @@
 </script>
 
 <style scoped>
-
 </style>
