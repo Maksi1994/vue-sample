@@ -8,8 +8,8 @@
                 </div>
             </router-link>
 
-            <router-link  class="d-block ml-auto" :to="'/regist'">
-                <b-button class="px-4"  variant="outline-primary">Sing Up</b-button>
+            <router-link class="d-block ml-auto" :to="'/regist'">
+                <b-button class="px-4" variant="outline-primary">Sing Up</b-button>
             </router-link>
         </div>
         <div class="container">
@@ -67,6 +67,7 @@
 
 <script>
     import {required, email, minLength} from 'vuelidate/lib/validators';
+    import * as axios from 'axios';
 
     export default {
         name: "login",
@@ -85,6 +86,23 @@
 
                 if (!this.$v.$invalid) {
                     console.log('submit!');
+
+                    /*
+                    axios.post('/login', {})
+                        .then(res => {
+
+                        }, () => {
+
+                        });
+
+                        */
+                    setTimeout(() => {
+                        this.$store.state.user = {
+                            first_name: "Maxim",
+                            last_name: "Karpinka"
+                        };
+                        this.$router.push('/');
+                    }, 1000);
                 }
             },
             touchForm(fieldName) {

@@ -4,6 +4,7 @@ import Login from './+shared/components/login.vue';
 import List from './modules/backend/articles/list';
 import Backend from './modules/backend/backend.vue';
 import Frontend from './modules/frontend/frontend.vue';
+import Profile from './modules/frontend/profile';
 
 export const routes = [
     {
@@ -11,6 +12,9 @@ export const routes = [
     },
     {
         path: '/regist', component: Regist
+    },
+    {
+        path: '/profile', component: Profile
     },
     {
         path: '/backend', component: Backend, children: [
@@ -27,7 +31,7 @@ export const routes = [
         ]
     },
     {
-        path: '/frontend', component: Frontend, children: [
+        path: '/', component: Frontend, children: [
             {
                 path: '', component: Main
             }

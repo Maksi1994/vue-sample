@@ -19,6 +19,9 @@
             Login,
             Regist,
             Frontend
+        },
+        mounted() {
+            this.$store.commit('loadAppData');
         }
     };
 
