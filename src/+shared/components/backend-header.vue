@@ -1,7 +1,7 @@
 <template>
     <div class="haader-nav">
-        <router-link :to="'/frontend'">
-            <div class="logo" >
+        <router-link :to="'/'">
+            <div class="logo">
                 Blog.com
             </div>
         </router-link>

@@ -1,27 +1,27 @@
 <template>
     <div id="app">
-        <router-view></router-view>
+        <router-view v-if="isInit"></router-view>
     </div>
 </template>
 
 <script>
     import Backend from "./modules/backend/backend.vue";
-    import Login from './+shared/components/login.vue';
-    import Regist from './+shared/components/regist.vue';
-    import Main from './modules/frontend/main.vue';
-    import Frontend from './modules/frontend/frontend.vue';
+    import Frontend from "./modules/frontend/frontend.vue";
+    import {mapGetters} from "vuex";
 
     export default {
         name: "app",
         components: {
             Backend,
-            Main,
-            Login,
-            Regist,
             Frontend
         },
+        computed: {
+            isInit() {
+                return this.$store.state.isInit;
+            }
+        },
         mounted() {
-            this.$store.commit('loadAppData');
+            this.$store.dispatch("loadAppData");
         }
     };
 

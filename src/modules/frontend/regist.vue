@@ -1,18 +1,5 @@
 <template>
     <div>
-        <div class="haader-nav">
-            <router-link :to="'/'">
-                <div class="logo">
-                    <i class="fas fa-blog pr-3"></i>
-                    Blog.com
-                </div>
-            </router-link>
-
-            <router-link class="d-block ml-auto" :to="'/login'">
-                <b-button class="px-4" variant="outline-primary">Sing in</b-button>
-            </router-link>
-        </div>
-
         <div class="container">
             <b-form class="w-50 mx-auto" @submit.prevent="regist">
                 <b-form-group
@@ -131,29 +118,29 @@
 </template>
 
 <script>
-    import {required, email, minLength, sameAs} from 'vuelidate/lib/validators';
-    import axios from 'axios';
+    import {required, email, minLength, sameAs} from "vuelidate/lib/validators";
+    import axios from "axios";
 
     export default {
         name: "regist",
         data() {
             return {
                 form: {
-                    first_name: '',
-                    last_name: '',
-                    email: '',
-                    password: '',
-                    confirm_password: '',
+                    first_name: "",
+                    last_name: "",
+                    email: "",
+                    password: "",
+                    confirm_password: "",
                     checkingEmailId: false
                 }
-            }
+            };
         },
         methods: {
             regist() {
                 console.log(this.form);
 
                 this.$router.push({
-                    path: '/'
+                    path: "/"
                 });
             },
             touchForm(fieldName) {
@@ -193,7 +180,7 @@
 
                         return new Promise((res, rej) => {
                             setTimeout(() => {
-                                res(this.form.email === 'mak55755@gmail.com');
+                                res(this.form.email === "mak55755@gmail.com");
                             }, 700);
                         });
                     }
@@ -204,12 +191,12 @@
                 },
                 confirm_password: {
                     required,
-                    sameAsPassword: sameAs('password'),
+                    sameAsPassword: sameAs("password"),
                     minLen: minLength(6)
                 }
             }
         }
-    }
+    };
 </script>
 
 <style scoped>

@@ -1,19 +1,7 @@
 <template>
     <div>
-        <div class="haader-nav">
-            <router-link :to="'/'">
-                <div class="logo">
-                    <i class="fas fa-blog pr-3"></i>
-                    Blog.com
-                </div>
-            </router-link>
-
-            <router-link class="d-block ml-auto" :to="'/regist'">
-                <b-button class="px-4" variant="outline-primary">Sing Up</b-button>
-            </router-link>
-        </div>
         <div class="container">
-            <b-form class="w-50 mx-auto" @submit.prevent="login">
+            <b-form class="w-50 mx-auto" @submit.prevent="sendForm">
                 <b-form-group
                         class="text-left"
                         id="input-group-1"
@@ -66,48 +54,48 @@
 </template>
 
 <script>
-    import {required, email, minLength} from 'vuelidate/lib/validators';
-    import * as axios from 'axios';
+    import {required, email, minLength} from "vuelidate/lib/validators";
+    import * as axios from "axios";
+    import {mapActions} from "vuex";
 
     export default {
         name: "login",
         data() {
             return {
                 form: {
-                    email: '',
-                    password: ''
+                    email: "",
+                    password: ""
                 },
                 submitted: false
-            }
+            };
         },
         methods: {
-            login() {
+            ...mapActions([
+                "login"
+            ]),
+            sendForm() {
                 this.submitted = true;
 
                 if (!this.$v.$invalid) {
-                    console.log('submit!');
+                    console.log("submit!");
 
-                    /*
-                    axios.post('/login', {})
-                        .then(res => {
-
-                        }, () => {
-
-                        });
-
-                        */
-                    setTimeout(() => {
-                        this.$store.state.user = {
-                            first_name: "Maxim",
-                            last_name: "Karpinka"
-                        };
-                        this.$router.push('/');
-                    }, 1000);
+                    this.login({
+                        first_name: "Maxim",
+                        last_name: "Karpinka"
+                    });
                 }
             },
             touchForm(fieldName) {
                 this.$v.form[fieldName].$touch();
             }
+        },
+        created() {
+            this.$store.subscribe((mutation) => {
+                debugger;
+                if (mutation.type === "login") {
+                    this.$router.push("/");
+                }
+            });
         },
         validations: {
             form: {
@@ -121,10 +109,10 @@
                 }
             }
         }
-    }
+    };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .container {
         display: flex;
         align-items: flex-end;

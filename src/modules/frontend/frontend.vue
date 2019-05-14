@@ -7,13 +7,19 @@
 
 <script>
     import FrontendHeader from "../../+shared/components/frontent-header.vue";
+    import Login from "./login.vue";
+    import Regist from "./regist.vue";
+    import Main from "./main.vue";
 
     export default {
-        name: 'frontend',
+        name: "frontend",
         components: {
+            Main,
+            Login,
+            Regist,
             FrontendHeader
         }
-    }
+    };
 </script>
 
 <style scoped>
