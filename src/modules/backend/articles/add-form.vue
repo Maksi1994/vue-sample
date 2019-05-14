@@ -5,8 +5,7 @@
         <b-form class="mt-5" @submit.prevent="save">
             <b-form-group
                     id="input-group-1"
-                    label-for="input-1"
-            >
+                    label-for="input-1">
                 <b-form-input
                         id="input-1"
                         v-model="form.title"

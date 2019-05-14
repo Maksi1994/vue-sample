@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import * as axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -8,7 +9,12 @@ export default new Vuex.Store({
         user: null
     },
     getters: {
-        isAuth: () => !!this.user,
-        isAdmin: () => false
+        isAuth: (state) => !!state.user,
+        isAdmin: (state) => false
+    },
+    mutations: {
+        loadAppData() {
+
+        }
     }
 });
